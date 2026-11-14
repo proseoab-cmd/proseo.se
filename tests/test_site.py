@@ -40,6 +40,7 @@ KODADE_TECKEN = ("&#64;", "&#x40;", "&commat;", "%40", "(at)", "[at]", "snabel-a
 VANTADE_FILER = {
     ".nojekyll",
     "404.html",
+    "CNAME",
     "apple-touch-icon.png",
     "favicon.ico",
     "index.html",
@@ -277,6 +278,11 @@ class IngaSkriptOchIngaExternaResurser(unittest.TestCase):
     def test_bara_vantade_filer_publiceras(self):
         funna = {relativ(fil, DOCS) for fil in alla_filer(DOCS)}
         self.assertEqual(funna, VANTADE_FILER)
+
+    def test_domanfilen_pekar_ut_sajtens_adress(self):
+        doman = (DOCS / "CNAME").read_text(encoding="utf-8").strip()
+        self.assertEqual(doman, "www.proseo.se")
+        self.assertEqual(KANONISK, f"https://{doman}/")
 
     def test_sajten_ar_liten(self):
         storlek = sum(fil.stat().st_size for fil in alla_filer(DOCS))

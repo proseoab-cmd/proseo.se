@@ -1,0 +1,7 @@
+# Lokala filer som inte hör hemma i repot
+.claude/
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store
+underlag/

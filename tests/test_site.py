@@ -66,7 +66,7 @@ KANONISK = "https://www.proseo.se/"
 
 SIDFOT = (
     "Proseo AB · sedan 2013",
-    "Säte Kungälv",
+    "Säte Göteborg",
     "Org.nr 556920-0305",
     "Momsreg.nr SE556920030501",
     "Ängsgatan 20 b",
